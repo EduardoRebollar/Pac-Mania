@@ -11,6 +11,7 @@ public class Orange extends GraphicsObject {
         this.y_int = (int)y;
     }
 
+    @Override
     public void draw(Graphics g) {
         g.setColor(new Color(255, 165, 0));
         g.fillRect(this.x_int, this.y_int, 6, 3);
@@ -43,6 +44,7 @@ public class Orange extends GraphicsObject {
         g.fillRect(this.x_int, this.y_int + 21, 12, 3);
     }
 
+    @Override
     public void update(int pic_width, int pic_height, int frame) {
         this.x += this.speed_x;
         this.y += this.speed_y;
