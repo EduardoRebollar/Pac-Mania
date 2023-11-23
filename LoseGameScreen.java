@@ -12,6 +12,7 @@ public class LoseGameScreen extends GraphicsObject {
         this.y_int = (int)y;
     }
 
+    @Override
     public void draw(Graphics g) {
         g.setColor(new Color(0, 0, 0));
         g.fillRect(this.x_int, this.y_int, 800, 600);
@@ -196,7 +197,7 @@ public class LoseGameScreen extends GraphicsObject {
         g.setColor(new Color(0, 0, 0));
         g.fillRect(this.x_int + 370, this.y_int + 42 + 320, 15, 3);
         g.setColor(Color.WHITE);
-        g.setFont(new Font("Arial", 1, 30));
+        g.setFont(new Font("Arial", Font.PLAIN, 30));
         g.drawString("TRY AGAIN!", this.x_int + 290, this.y_int + 450);
     }
 }

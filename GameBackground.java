@@ -16,16 +16,9 @@ public class GameBackground extends GraphicsObject {
         this.height = height;
     }
 
+    @Override
     public void draw(Graphics g) {
         g.setColor(new Color(0, 0, 0));
         g.fillRect(this.x_int, this.y_int, this.width, this.height);
-        g.setColor(Color.WHITE);
-        g.setFont(new Font("Arial", 1, 30));
-        g.drawString("Pac-Mania!", this.x_int + 300, this.y_int + 35);
-    }
-
-    public void update(int pic_width, int pic_height, int frame) {
-        this.x += this.speed_x;
-        this.y += this.speed_y;
     }
 }

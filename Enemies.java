@@ -5,7 +5,7 @@ public class Enemies extends GraphicsObject {
     int x_int;
     int y_int;
     static double speed_enemies_x = 1.0;
-    static double speed_enemies_y = 10.0;
+    static double speed_enemies_y = 5.0;
     Color color;
 
     public Enemies(double x, double y, Color color) {
@@ -15,6 +15,7 @@ public class Enemies extends GraphicsObject {
         this.color = color;
     }
 
+    @Override
     public void draw(Graphics g) {
         g.setColor(this.color);
         g.fillRect(this.x_int, this.y_int, 9, 3);
@@ -173,6 +174,7 @@ public class Enemies extends GraphicsObject {
         g.fillRect(this.x_int + 21, this.y_int + 39, 3, 3);
     }
 
+    @Override
     public void update(int pic_width, int pic_height, int frame) {
         this.x += this.speed_x;
         this.y += this.speed_y;
@@ -193,26 +195,26 @@ public class Enemies extends GraphicsObject {
     }
 
     public boolean collidesWith(Orange orange) {
-        double enemyLeft = (double)(this.getX() - 15);
-        double enemyRight = (double)(this.getX() + 24);
-        double enemyTop = (double)this.getY();
-        double enemyBottom = (double)(this.getY() + 39);
-        double orangeLeft = (double)(orange.getX_int() - 6);
-        double orangeRight = (double)(orange.getX_int() + 24);
-        double orangeTop = (double)orange.getY_int();
-        double orangeBottom = (double)(orange.getY_int() + 21);
+        double enemyLeft = this.getX() - 15;
+        double enemyRight = this.getX() + 24;
+        double enemyTop = this.getY();
+        double enemyBottom = this.getY() + 39;
+        double orangeLeft = orange.getX_int() - 6;
+        double orangeRight = orange.getX_int() + 24;
+        double orangeTop = orange.getY_int();
+        double orangeBottom = orange.getY_int() + 21;
         return enemyRight >= orangeLeft && enemyLeft <= orangeRight && enemyBottom >= orangeTop && enemyTop <= orangeBottom;
     }
 
     public boolean collidesWith(Player Pacman) {
-        double enemyLeft = (double)(this.getX() - 15);
-        double enemyRight = (double)(this.getX() + 24);
-        double enemyTop = (double)this.getY();
-        double enemyBottom = (double)(this.getY() + 39);
-        double PacmanLeft = (double)(Pacman.getX_int() - 15);
-        double PacmanRight = (double)(Pacman.getX_int() + 24);
-        double PacmanTop = (double)Pacman.getY_int();
-        double PacmanBottom = (double)(Pacman.getY_int() + 42);
+        double enemyLeft = this.getX() - 15;
+        double enemyRight = this.getX() + 24;
+        double enemyTop = this.getY();
+        double enemyBottom = this.getY() + 39;
+        double PacmanLeft = Pacman.getX_int() - 15;
+        double PacmanRight = Pacman.getX_int() + 24;
+        double PacmanTop = Pacman.getY_int();
+        double PacmanBottom = Pacman.getY_int() + 42;
         return enemyRight >= PacmanLeft && enemyLeft <= PacmanRight && enemyBottom >= PacmanTop && enemyTop <= PacmanBottom;
     }
 }

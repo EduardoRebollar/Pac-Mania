@@ -11,6 +11,7 @@ public class Player extends GraphicsObject {
         this.y_int = (int)y;
     }
 
+    @Override
     public void draw(Graphics g) {
         g.setColor(new Color(0, 0, 0));
         g.fillRect(this.x_int, this.y_int, 15, 3);
@@ -98,6 +99,7 @@ public class Player extends GraphicsObject {
         g.fillRect(this.x_int, this.y_int + 42, 15, 3);
     }
 
+    @Override
     public void update(int pic_width, int pic_height, int frame) {
         this.x += this.speed_x;
         this.y += this.speed_y;
